@@ -1,10 +1,12 @@
 import { Router } from "express";
-import { getAllSupplies , addSupply ,getSupplieById } from "../controllers/supplie_controller";
-import { getAllLogs } from './../controllers/log_controller';
+import { getAllSupplies , addSupply ,getSupplieById  } from "../controllers/supplie_controller";
+import { getAllLogs ,getReportDay} from './../controllers/log_controller';
 
 const router = Router();
 
 router.get("/supplies", getAllSupplies);
+
+router.get("/reportDay", getReportDay);
 
 router.get("/supplies/:Id",getSupplieById);
 

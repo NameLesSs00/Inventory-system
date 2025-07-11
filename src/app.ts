@@ -1,6 +1,18 @@
 import express from 'express';
 import supplieRoutes from "./routes/supplie_route"
+import { Supplie } from './models/supplie';
+import { Log } from './models/log';
 const app = express();
+
+let op = new Supplie("pen1",["school"],100,15);
+let id = op.toOurSuppllies().id
+Log.addLog(id,100,false);
+op =new Supplie("book1",["school"],10,0);
+id = op.toOurSuppllies().id
+Log.addLog(id,10,false);
+op =new Supplie("pen2",["school"],200,455);
+id = op.toOurSuppllies().id
+Log.addLog(id,200,false);
 
 app.use(express.json());
 
@@ -12,7 +24,6 @@ app.get("/api",(req,res)=>{
 })
 
 app.use('/api',supplieRoutes);
-
 
 
 export default app;
@@ -53,3 +64,4 @@ export default app;
 */
 
 /*now we kinda made the */
+

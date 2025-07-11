@@ -6,7 +6,7 @@ interface InventoryLog {
   date: string;
 }
 
-let Logs: InventoryLog[] = [];
+export let Logs: InventoryLog[] = [];
 
 export class Log {
   private logId: number;

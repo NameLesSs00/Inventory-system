@@ -60,7 +60,7 @@ export class Supplie {
     };
   }
 
-  static findById(id: number): ourSupllies | undefined {
+    static findById(id: number): ourSupllies | undefined {
     return Supplies.find((sup) => sup.id === id);
   }
 
@@ -83,3 +83,8 @@ export class Supplie {
     }
   }
 }
+
+let addp1 = new Supplie("pen",["school" , "boys" , "girls"] , 100 , 15);
+addp1 = new Supplie("book",["school"] , 50 , 25);
+addp1 = new Supplie("book2",["school"] , 150 , 45);
+addp1 = new Supplie("book3",["school"] , 550 , 255);
