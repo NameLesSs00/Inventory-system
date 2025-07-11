@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/",(req,res)=>{
+app.get("/api",(req,res)=>{
   res.json({
     working:true,
     msg:"keep going."
@@ -51,3 +51,5 @@ export default app;
 
 
 */
+
+/*now we kinda made the */

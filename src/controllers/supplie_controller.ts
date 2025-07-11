@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Supplie } from "../models/supplie"; 
+import { Supplie ,Supplies } from "../models/supplie"; 
 import { Log } from "../models/log";
 
 export function getAllSupplies(req: Request, res: Response) {
@@ -22,4 +22,15 @@ export function addSupply(req: Request, res: Response) {
   Log.addLog(newSupply.id, quantity, false);
 
   return res.status(201).json(newSupply);
+}
+
+export function getSupplieById(req:Request , res :Response){
+  let findId: number = Number(req.params.Id);
+  let itemfound = Supplies.find((it) => it.id === findId )
+  if (!itemfound){
+    return res.json({error:true,msg:"no such id is found."})
+  }
+  else{
+    return res.json(itemfound);
+  }
 }
